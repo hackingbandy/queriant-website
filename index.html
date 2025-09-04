@@ -36,7 +36,7 @@
         </div>
         <!-- Navigation und Sprachschalter -->
         <div class="flex items-center space-x-6">
-            <a href="#contact" class="hover:text-gray-900 transition-colors" data-key="nav_about_us">Über Uns</a>
+            <a href="#contact" class="hover:text-gray-900 transition-colors" data-key="nav_about_us">Kontakt</a>
             <button id="lang-switch-btn" class="px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-full shadow-sm hover:bg-gray-100 transition-colors">
                 English
             </button>
@@ -84,23 +84,9 @@
         <!-- Contact Form Section -->
         <section id="contact" class="w-full mt-24 text-center">
             <h2 data-key="contact_title" class="text-4xl font-bold text-gray-800 mb-12">Kontaktieren Sie uns</h2>
-            <form id="contact-form" action="mailto:contact@queriant.io" method="post" enctype="text/plain" class="bg-white p-8 sm:p-12 rounded-3xl shadow-lg border border-gray-100 max-w-2xl mx-auto text-left space-y-6">
-                <div>
-                    <label for="name" class="block text-gray-700 font-medium mb-2" data-key="form_name_label">Name</label>
-                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" data-key="form_name_placeholder" placeholder="Ihr Name" required>
-                </div>
-                <div>
-                    <label for="email" class="block text-gray-700 font-medium mb-2" data-key="form_email_label">E-Mail</label>
-                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" data-key="form_email_placeholder" placeholder="Ihre E-Mail-Adresse" required>
-                </div>
-                <div>
-                    <label for="message" class="block text-gray-700 font-medium mb-2" data-key="form_message_label">Nachricht</label>
-                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" data-key="form_message_placeholder" placeholder="Ihre Nachricht" required></textarea>
-                </div>
-                <button type="submit" class="w-full px-8 py-3 bg-gradient-to-r from-orange-500 to-red-400 text-white font-bold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300" data-key="form_submit_btn">
-                    Senden
-                </button>
-            </form>
+            <a href="mailto:contact@queriant.io" class="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-orange-500 to-red-400 text-white font-bold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300 inline-block" data-key="email_button">
+                E-Mail schreiben
+            </a>
         </section>
 
     </main>
@@ -127,13 +113,7 @@
                     mission_title: "Unsere Mission",
                     mission_text: "We empower AI innovators and data custodians alike by delivering a unified, compliance‑first data query layer that ensures every real‑time request is secure, auditable, and of the highest integrity - catalyzing smarter AI applications and new revenue streams for data providers worldwide.",
                     contact_title: "Kontaktieren Sie uns",
-                    form_name_label: "Name",
-                    form_name_placeholder: "Ihr Name",
-                    form_email_label: "E-Mail",
-                    form_email_placeholder: "Ihre E-Mail-Adresse",
-                    form_message_label: "Nachricht",
-                    form_message_placeholder: "Ihre Nachricht",
-                    form_submit_btn: "Senden",
+                    email_button: "E-Mail schreiben",
                     footer_text: "© 2025 Queriant. Alle Rechte vorbehalten.",
                     switch_lang: "English"
                 },
@@ -148,13 +128,7 @@
                     mission_title: "Our Mission",
                     mission_text: "We empower AI innovators and data custodians alike by delivering a unified, compliance‑first data query layer that ensures every real‑time request is secure, auditable, and of the highest integrity - catalyzing smarter AI applications and new revenue streams for data providers worldwide.",
                     contact_title: "Contact Us",
-                    form_name_label: "Name",
-                    form_name_placeholder: "Your Name",
-                    form_email_label: "Email",
-                    form_email_placeholder: "Your email address",
-                    form_message_label: "Message",
-                    form_message_placeholder: "Your message",
-                    form_submit_btn: "Send",
+                    email_button: "Write an Email",
                     footer_text: "© 2025 Queriant. All Rights Reserved.",
                     switch_lang: "Deutsch"
                 }
@@ -185,20 +159,6 @@
                 currentLang = currentLang === 'de' ? 'en' : 'de';
                 localStorage.setItem('lang', currentLang);
                 updateContent(currentLang);
-            });
-
-            // Handle form submission
-            const contactForm = document.getElementById('contact-form');
-            contactForm.addEventListener('submit', (e) => {
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
-                
-                // Construct the email body
-                const subject = 'Neue Kontaktanfrage von der Website';
-                const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0ANachricht: ${message}`;
-                
-                contactForm.action = `mailto:contact@queriant.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             });
         });
     </script>
