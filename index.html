@@ -36,7 +36,7 @@
         </div>
         <!-- Navigation und Sprachschalter -->
         <div class="flex items-center space-x-6">
-            <a href="#about-us" class="hover:text-gray-900 transition-colors" data-key="nav_about_us">Über Uns</a>
+            <a href="#contact" class="hover:text-gray-900 transition-colors" data-key="nav_about_us">Über Uns</a>
             <button id="lang-switch-btn" class="px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-full shadow-sm hover:bg-gray-100 transition-colors">
                 English
             </button>
@@ -81,33 +81,26 @@
             </div>
         </section>
 
-        <!-- About Us Section -->
-        <section id="about-us" class="w-full mt-24 text-center">
-            <h2 data-key="about_us_title" class="text-4xl font-bold text-gray-800 mb-12">Über uns</h2>
-            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                <!-- CEO Profile -->
-                <div class="flex flex-col items-center">
-                    <div class="w-40 h-40 bg-gray-200 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 9a3 3 0 100-6 3 3 0 000 6zM10 12a7 7 0 100-14 7 7 0 000 14zM10 16a6 6 0 00-6 6h12a6 6 0 00-6-6z" clip-rule="evenodd" fill-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 data-key="ceo_name" class="text-xl font-bold text-gray-800">Frederic Büdel</h3>
-                    <p data-key="ceo_title" class="text-gray-600">Co-Founder & CEO</p>
-                    <p data-key="ceo_experience" class="text-sm text-gray-500 mt-2 text-center">Ex co-founder at Preventio GmbH</p>
+        <!-- Contact Form Section -->
+        <section id="contact" class="w-full mt-24 text-center">
+            <h2 data-key="contact_title" class="text-4xl font-bold text-gray-800 mb-12">Kontaktieren Sie uns</h2>
+            <form id="contact-form" action="mailto:info@queriant.io" method="post" enctype="text/plain" class="bg-white p-8 sm:p-12 rounded-3xl shadow-lg border border-gray-100 max-w-2xl mx-auto text-left space-y-6">
+                <div>
+                    <label for="name" class="block text-gray-700 font-medium mb-2" data-key="form_name_label">Name</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" data-key="form_name_placeholder" placeholder="Ihr Name" required>
                 </div>
-                <!-- CTO Profile -->
-                <div class="flex flex-col items-center">
-                    <div class="w-40 h-40 bg-orange-200 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-24 h-24 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 9a3 3 0 100-6 3 3 0 000 6zM10 12a7 7 0 100-14 7 7 0 000 14zM10 16a6 6 0 00-6 6h12a6 6 0 00-6-6z" clip-rule="evenodd" fill-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 data-key="cto_name" class="text-xl font-bold text-gray-800">Andrey Kudryavtsev</h3>
-                    <p data-key="cto_title" class="text-gray-600">Co-Founder & CTO</p>
-                    <p data-key="cto_experience" class="text-sm text-gray-500 mt-2 text-center">Erfahrung als Data Scientist bei Siemens AG und von der Frankfurt School</p>
+                <div>
+                    <label for="email" class="block text-gray-700 font-medium mb-2" data-key="form_email_label">E-Mail</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" data-key="form_email_placeholder" placeholder="Ihre E-Mail-Adresse" required>
                 </div>
-            </div>
+                <div>
+                    <label for="message" class="block text-gray-700 font-medium mb-2" data-key="form_message_label">Nachricht</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" data-key="form_message_placeholder" placeholder="Ihre Nachricht" required></textarea>
+                </div>
+                <button type="submit" class="w-full px-8 py-3 bg-gradient-to-r from-orange-500 to-red-400 text-white font-bold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300" data-key="form_submit_btn">
+                    Senden
+                </button>
+            </form>
         </section>
 
     </main>
@@ -125,7 +118,7 @@
             const translations = {
                 de: {
                     logo_title: "QUERIANT",
-                    nav_about_us: "Über Uns",
+                    nav_about_us: "Kontakt",
                     hero_title: "Die weltweit erste Quelle für sichere, Compliance-konforme KI-Daten in Echtzeit.",
                     hero_subtitle: "Ihr vertrauenswürdiger Partner für Datenanbieter, um ihre Informationen sicher freizuschalten und zu monetarisieren.",
                     hero_cta: "Jetzt mehr erfahren",
@@ -133,19 +126,20 @@
                     vision_text: "To become the world’s default source for secure, compliant, real‑time AI data and the trusted partner for data providers to safely unlock and monetize their information.",
                     mission_title: "Unsere Mission",
                     mission_text: "We empower AI innovators and data custodians alike by delivering a unified, compliance‑first data query layer that ensures every real‑time request is secure, auditable, and of the highest integrity - catalyzing smarter AI applications and new revenue streams for data providers worldwide.",
-                    about_us_title: "Über Uns",
-                    ceo_name: "Frederic Büdel",
-                    ceo_title: "Co-Founder & CEO",
-                    ceo_experience: "Ex co-founder at Preventio GmbH",
-                    cto_name: "Andrey Kudryavtsev",
-                    cto_title: "Co-Founder & CTO",
-                    cto_experience: "Erfahrung als Data Scientist bei Siemens AG und von der Frankfurt School",
+                    contact_title: "Kontaktieren Sie uns",
+                    form_name_label: "Name",
+                    form_name_placeholder: "Ihr Name",
+                    form_email_label: "E-Mail",
+                    form_email_placeholder: "Ihre E-Mail-Adresse",
+                    form_message_label: "Nachricht",
+                    form_message_placeholder: "Ihre Nachricht",
+                    form_submit_btn: "Senden",
                     footer_text: "© 2025 Queriant. Alle Rechte vorbehalten.",
                     switch_lang: "English"
                 },
                 en: {
                     logo_title: "QUERIANT",
-                    nav_about_us: "About Us",
+                    nav_about_us: "Contact",
                     hero_title: "The world’s default source for secure, compliant, real-time AI data.",
                     hero_subtitle: "Your trusted partner for data providers to safely unlock and monetize their information.",
                     hero_cta: "Learn More",
@@ -153,13 +147,14 @@
                     vision_text: "To become the world’s default source for secure, compliant, real‑time AI data and the trusted partner for data providers to safely unlock and monetize their information.",
                     mission_title: "Our Mission",
                     mission_text: "We empower AI innovators and data custodians alike by delivering a unified, compliance‑first data query layer that ensures every real‑time request is secure, auditable, and of the highest integrity - catalyzing smarter AI applications and new revenue streams for data providers worldwide.",
-                    about_us_title: "About Us",
-                    ceo_name: "Frederic Büdel",
-                    ceo_title: "Co-Founder & CEO",
-                    ceo_experience: "Ex co-founder at Preventio GmbH",
-                    cto_name: "Andrey Kudryavtsev",
-                    cto_title: "Co-Founder & CTO",
-                    cto_experience: "Experience as a Data Scientist at Siemens AG and from the Frankfurt School",
+                    contact_title: "Contact Us",
+                    form_name_label: "Name",
+                    form_name_placeholder: "Your Name",
+                    form_email_label: "Email",
+                    form_email_placeholder: "Your email address",
+                    form_message_label: "Message",
+                    form_message_placeholder: "Your message",
+                    form_submit_btn: "Send",
                     footer_text: "© 2025 Queriant. All Rights Reserved.",
                     switch_lang: "Deutsch"
                 }
@@ -171,7 +166,11 @@
                 elementsToTranslate.forEach(element => {
                     const key = element.getAttribute('data-key');
                     if (translations[lang][key]) {
-                        element.textContent = translations[lang][key];
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.placeholder = translations[lang][key];
+                        } else {
+                            element.textContent = translations[lang][key];
+                        }
                     }
                 });
                 langSwitchBtn.textContent = translations[lang].switch_lang;
@@ -186,6 +185,20 @@
                 currentLang = currentLang === 'de' ? 'en' : 'de';
                 localStorage.setItem('lang', currentLang);
                 updateContent(currentLang);
+            });
+
+            // Handle form submission
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', (e) => {
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                // Construct the email body
+                const subject = 'Neue Kontaktanfrage von der Website';
+                const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0ANachricht: ${message}`;
+                
+                contactForm.action = `mailto:info@queriant.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             });
         });
     </script>
